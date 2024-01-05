@@ -1,0 +1,99 @@
+.list-container {
+  width: 96%;
+  /* margin-left: 15%; */
+  padding: 2%;
+  th {
+    background-color: #ebf5ff;
+  }
+  .w-18 {
+    width: 20%;
+  }
+  .w-21 {
+    width: 21%;
+  }
+  td {
+    .gray-color {
+      color: gray;
+    }
+  }
+  button {
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+}
+
+.mat-select {
+  background-color: white;
+}
+
+mat-form-field {
+  ::ng-deep div {
+    background-color: #ffffff;
+    padding: 0;
+  }
+}
+
+tr {
+  height: 55px !important;
+}
+
+::ng-deep .ngx-pagination a:hover {
+  border-radius: 50% !important;
+}
+
+::ng-deep .ngx-pagination .current {
+  border-radius: 50% !important;
+  background-color: #0cc9e8 !important;
+}
+
+button {
+  border-color: #0061b6 !important;
+}
+
+::ng-deep .ngx-pagination .pagination-next a:after {
+  display: none !important;
+}
+::ng-deep .ngx-pagination .pagination-next.disabled:after {
+  display: none !important;
+}
+::ng-deep .ngx-pagination .pagination-previous a:before {
+  display: none !important;
+}
+
+::ng-deep .ngx-pagination .pagination-previous.disabled:before {
+  display: none !important;
+}
+
+::ng-deep .ngx-pagination {
+  padding-left: 0 !important;
+}
+
+.custom-first-last:hover {
+  background: #e6e6e6;
+}
+
+.custom-first-last {
+  color: #0a0a0a;
+  display: block;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 50%;
+}
+
+.custome-disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #cacaca !important;
+}
+
+.search-field {
+  ::ng-deep .mat-mdc-text-field-wrapper {
+    width: 250px !important;
+  }
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 40px !important;
+  width: 100px !important;
+}
+
+

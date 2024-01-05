@@ -1,0 +1,64 @@
+<div>
+  <img src="/assets/Images/login-bg-1.svg" class="w-100" alt="backgound img" />
+
+  <div class="logo-img">
+    <img src="/assets/Images/Logo.svg" alt="Logo ige" />
+    <h5>online Project Management</h5>
+  </div>
+
+  <div class="center-div">
+    <div class="login-page-container">
+      <h4 class="login-header-text gray-color">Login to get Started</h4>
+
+      <form [formGroup]="loginForm" (submit)="onLogin()">
+        <div>
+          <label class="gray-color" [class.required]="loginForm.get('UserName')?.invalid && loginForm.get('UserName')?.touched">Email</label>
+        </div>
+        <div>
+          <mat-form-field class="w-100" appearance="outline">
+            <input
+              type="email"
+              matInput
+              placeholder="Enter Email"
+              formControlName="UserName"
+            />
+          </mat-form-field>
+          <div *ngIf="loginForm.get('UserName')?.invalid && loginForm.get('UserName')?.touched" class="error-message" style="color: red;">{{ usernameErrorMessage }}</div>
+
+        </div>
+
+        <div>
+          <label class="gray-color" [class.required]="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched">Password</label>
+        </div>
+        <div>
+          <mat-form-field class="w-100" appearance="outline">
+            <input
+              class="w-100"
+              [type]="hidePassword ?'password':'text'"
+              matInput
+              formControlName="Password"
+              placeholder="Enter Password"
+            />
+            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+              {{ hidePassword ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </mat-form-field>
+          <div *ngIf="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched" class="error-message" style="color: red;">{{ passwordErrorMessage }}</div>
+
+        </div>
+        <div class="Forgot-password gray-color">Forgot Password?</div>
+        <div style="text-align: center; margin-top: 20%">
+          <button
+            mat-raised-button
+            class="login-btn"
+            type="submit"
+            name="login"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,87 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav
+    #sidenav
+    class="example-sidenav"
+    mode="side"
+    fixedInViewport="true"
+    opened="true"
+  >
+    <div class="center-container">
+      <mat-nav-list>
+        <mat-list-item>
+          <a
+            mat-list-item
+            routerLinkActive="active-link"
+            class="hover"
+            routerLinkActive="active-list-item"
+            routerLink="/Project/dashboard"
+            #rla="routerLinkActive"
+          >
+            <img [src]="rla.isActive ? dashboardActiveImg : dashboardImg" />
+          </a>
+        </mat-list-item>
+
+        <mat-list-item>
+          <a
+            mat-list-item
+            routerLinkActive="active-link"
+            class="hover"
+            routerLinkActive="active-list-item"
+            routerLink="/Project/project-list"
+            #rlb="routerLinkActive"
+          >
+            <img [src]="rlb.isActive ? projectActiveListImg : projectListImg" />
+          </a>
+        </mat-list-item>
+
+        <mat-list-item>
+          <a
+            mat-list-item
+            routerLinkActive="active-link"
+            class="hover"
+            routerLinkActive="active-list-item"
+            routerLink="/Project/create-project"
+            #rlc="routerLinkActive"
+          >
+            <img
+              [src]="rlc.isActive ? createProjectActiveImg : createProjectImg"
+            />
+          </a>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+    <mat-nav-list>
+      <div class="logout-container">
+        <mat-list-item>
+          <a
+            mat-list-item
+            routerLink=""
+          >
+            <img [src]="logoutImg" />
+          </a>
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+    <mat-nav-list> </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content-container">
+      <img
+        src="assets/Images/Header-bg.svg"
+        class="w-t-100"
+        alt="backgound img"
+      />
+      <div class="logo-img logo-header-img">
+        <img src="assets/Images/Logo.svg" alt="Logo image" />
+      </div>
+    </div>
+    <div
+      [ngClass]="{
+        'overlay-div': !rla.isActive,
+        'dash-overlay-div': rla.isActive
+      }"
+    >
+      <router-outlet></router-outlet>
+    </div> </mat-sidenav-content
+></mat-sidenav-container>

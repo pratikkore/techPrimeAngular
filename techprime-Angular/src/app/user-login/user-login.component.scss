@@ -1,0 +1,79 @@
+.logo-img {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .center-div {
+    display: flex;
+    justify-content: center;
+    top: 60px;
+    left: 50%;
+  }
+  
+  .login-page-container {
+    position: absolute;
+    top: 185px;
+    background: #ffffff;
+    width: 330px;
+    border-radius: 3%;
+    height: 380px;
+    padding: 24px;
+  }
+  
+  .login-header-text {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .login-btn-div {
+    text-align: center;
+  }
+  
+  .invalidCredential-css {
+    margin-left: 700px;
+    margin-top: 87px;
+    color: red;
+  }
+  
+  .grid-item {
+    padding-top: 10px !important;
+    text-align: end;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  
+  .visibility-eye{
+    cursor: pointer;
+  }
+
+  .login-btn{
+    background-color:#0061b6 !important;
+    width: 50%;
+    color: #ffffff !important;
+    border-radius: 20px;
+  }
+
+  .gray-color{
+    color: gray;
+  }
+
+  .Forgot-password{
+    display: flex;
+    justify-content:flex-end;
+    color: #0061b6;
+  }
+
+  .invalidCredential-css {
+    margin-left: 700px;
+    margin-top: 87px;
+    color: red;
+  }

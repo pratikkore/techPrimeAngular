@@ -1,0 +1,263 @@
+<div>
+  <!-- <div>
+    <img src="/src/assets/Images/create-project.svg" alt="" />
+  </div> -->
+  <!-- <div class="center-div"> -->
+  <div class="login-page-container">
+    <form [formGroup]="createProjectform" (submit)="onSaveProject()">
+      <div class="main-tile-div">
+        <mat-grid-list cols="4" rowHeight="130px">
+          <mat-grid-tile class="projectNameTile" colspan="3" rowspan="1">
+            <mat-form-field class="w-75" appearance="outline">
+              <textarea
+                type="text"
+                matInput
+                placeholder="Enter Project Name"
+                formControlName="ProjectName"
+              >
+              </textarea>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile class="btn-tile" colspan="1" rowspan="1">
+            <button
+              style="width: 135px"
+              mat-raised-button
+              class="save-btn"
+              type="submit"
+              name="save"
+            >
+              Save Project
+            </button>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="4" rowHeight="110px">
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Reason</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field
+                  *ngIf="reason.length"
+                  appearance="outline"
+                  class="w-95"
+                >
+                  <mat-label>Select a Reason</mat-label>
+                  <mat-select formControlName="Reason">
+                    <mat-option *ngFor="let rea of reason" [value]="rea.Reason">
+                      {{ rea.Reason }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Type</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field
+                  *ngIf="type.length"
+                  appearance="outline"
+                  class="w-95"
+                >
+                  <mat-label>Select a Type</mat-label>
+                  <mat-select formControlName="Type">
+                    <mat-option *ngFor="let t of type" [value]="t.Type">
+                      {{ t.Type }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Division</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field
+                  *ngIf="division.length"
+                  appearance="outline"
+                  class="w-95"
+                >
+                  <mat-label>Select a Division</mat-label>
+                  <mat-select formControlName="Division">
+                    <mat-option
+                      *ngFor="let divi of division"
+                      [value]="divi.Division"
+                    >
+                      {{ divi.Division }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="1" rowspan="1"> </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="4" rowHeight="100px">
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Category</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field
+                  *ngIf="category.length"
+                  appearance="outline"
+                  class="w-95"
+                >
+                  <mat-label>Select a Category</mat-label>
+                  <mat-select formControlName="Category">
+                    <mat-option
+                      *ngFor="let cat of category"
+                      [value]="cat.Category"
+                    >
+                      {{ cat.Category }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Priority</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field
+                  *ngIf="priority.length"
+                  appearance="outline"
+                  class="w-95"
+                >
+                  <mat-label>Select a Priority</mat-label>
+                  <mat-select formControlName="Priority">
+                    <mat-option
+                      *ngFor="let pri of priority"
+                      [value]="pri.Priority"
+                    >
+                      {{ pri.Priority }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Department</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field
+                  *ngIf="dept.length"
+                  appearance="outline"
+                  class="w-95"
+                >
+                  <mat-label>Select a Department</mat-label>
+                  <mat-select formControlName="Department">
+                    <mat-option *ngFor="let d of dept" [value]="d.Department">
+                      {{ d.Department }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1"> </mat-grid-tile>
+        </mat-grid-list>
+
+        <mat-grid-list cols="4" rowHeight="100px" className="date-cs">
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Start Date</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field class="w-95" appearance="outline">
+                  <input
+                    matInput
+                    [matDatepicker]="picker1"
+                    placeholder="Start Date"
+                    formControlName="StartDate"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker1"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">End Date</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field class="w-95" appearance="outline">
+                  <input
+                    matInput
+                    [matDatepicker]="picker2"
+                    placeholder="End Date"
+                    formControlName="EndDate"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker2"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <div class="w-100">
+              <div class="text-start">
+                <h5 class="gray-color">Location</h5>
+              </div>
+              <div class="text-start">
+                <mat-form-field
+                  *ngIf="location.length"
+                  appearance="outline"
+                  class="w-95"
+                >
+                  <mat-label>Select a location</mat-label>
+                  <mat-select formControlName="Location">
+                    <mat-option
+                      *ngFor="let loca of location"
+                      [value]="loca.Location"
+                    >
+                      {{ loca.Location }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="4" rowHeight="100px">
+          <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1">
+            <h4>
+              Status: <span style="font-weight: bold">{{ statusvalue }}</span>
+            </h4></mat-grid-tile
+          >
+          <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </form>
+  </div>
+</div>

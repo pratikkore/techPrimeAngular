@@ -1,0 +1,56 @@
+<div
+  fxLayout="row"
+  fxLayoutGap="15px"
+  style="margin-top: 15px; margin-bottom: 15px"
+>
+  <mat-card class="w-20 count-container">
+    <div>
+      <h4>Total Projects</h4>
+    </div>
+    <div>
+      <h1>{{ projectStatusCounts.total }}</h1>
+    </div>
+  </mat-card>
+  <mat-card class="w-20 count-container">
+    <div>
+      <h4>Closed</h4>
+    </div>
+    <div>
+      <h1>{{ projectStatusCounts.closed }}</h1>
+    </div>
+  </mat-card>
+  <mat-card class="w-20 count-container">
+    <div>
+      <h4>Running</h4>
+    </div>
+    <div>
+      <h1>{{ projectStatusCounts.running }}</h1>
+    </div>
+  </mat-card>
+  <mat-card class="w-20 count-container">
+    <div>
+      <h4>Closure Delay</h4>
+    </div>
+    <div>
+      <h1>{{ projectStatusCounts.colsureDelay }}</h1>
+    </div>
+  </mat-card>
+  <mat-card class="w-20 count-container">
+    <div>
+      <h4>Cancelled</h4>
+    </div>
+    <div>
+      <h1>{{ projectStatusCounts.canceled }}</h1>
+    </div>
+  </mat-card>
+</div>
+<div>
+<h2 style="text-align: start;">Department wise - Total Vs Closed</h2>
+<div className="w-60">
+  <highcharts-chart
+    *ngIf="isHighcharts"
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+  ></highcharts-chart>
+</div>
+</div>

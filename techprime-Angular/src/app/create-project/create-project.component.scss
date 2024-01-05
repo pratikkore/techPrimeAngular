@@ -1,0 +1,52 @@
+.center-div {
+  display: flex;
+  justify-content: center;
+  top: 60px;
+  left: 50%;
+}
+
+.save-btn {
+  background-color: #0061b6 !important;
+  width: 50%;
+  color: #ffffff !important;
+  border-radius: 20px;
+}
+
+.btn-tile {
+  // width: 90px !;
+  ::ng-deep .mat-grid-tile-content {
+    justify-content: flex-end;
+  }
+}
+mat-grid-tile {
+  // width: 90px !;
+  ::ng-deep .mat-grid-tile-content {
+    justify-content: flex-start;
+    margin-left: 30px;
+
+    .w-75 {
+      width: 75% !important;
+    }
+    .w-95 {
+      width: 95%;
+    }
+  }
+}
+
+.main-tile-div {
+  width: 96%;
+  /* margin-left: 15%; */
+  padding: 2%;
+}
+
+.date-cs {
+  border: ridge 2px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.text-start {
+  text-align: start;
+}
