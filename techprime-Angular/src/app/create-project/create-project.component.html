@@ -181,15 +181,15 @@
           <mat-grid-tile colspan="1" rowspan="1">
             <div class="w-100">
               <div class="text-start">
-                <h5 class="gray-color">Start Date</h5>
+                <h5 class="gray-color">Start Date as per Project Plan</h5>
               </div>
               <div class="text-start">
                 <mat-form-field class="w-95" appearance="outline">
                   <input
                     matInput
                     [matDatepicker]="picker1"
-                    placeholder="Start Date"
-                    formControlName="StartDate"
+                    placeholder="D Month, Yr"
+                    formControlName="StartDate | date:'madium'"
                   />
                   <mat-datepicker-toggle
                     matSuffix
@@ -203,14 +203,14 @@
           <mat-grid-tile colspan="1" rowspan="1">
             <div class="w-100">
               <div class="text-start">
-                <h5 class="gray-color">End Date</h5>
+                <h5 class="gray-color">End Date as per Project Plan</h5>
               </div>
               <div class="text-start">
                 <mat-form-field class="w-95" appearance="outline">
                   <input
                     matInput
                     [matDatepicker]="picker2"
-                    placeholder="End Date"
+                    placeholder="D Month, Yr"
                     formControlName="EndDate"
                   />
                   <mat-datepicker-toggle
@@ -252,7 +252,8 @@
           <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
           <mat-grid-tile colspan="1" rowspan="1">
             <h4>
-              Status: <span style="font-weight: bold">{{ statusvalue }}</span>
+              <span style="color: gray">Status: </span
+              ><span style="font-weight: bold">{{ statusvalue }}</span>
             </h4></mat-grid-tile
           >
           <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>

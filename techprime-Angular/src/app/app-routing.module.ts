@@ -15,7 +15,7 @@ const routes: Routes = [
     component: SideNavComponent,
     canActivate: [authguardGuard],
     children: [
-      { path: '', redirectTo: 'create-project', pathMatch: 'full' },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {
         path: 'create-project',
         component: CreateProjectComponent,
